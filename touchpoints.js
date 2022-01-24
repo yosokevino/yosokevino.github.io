@@ -1,3 +1,5 @@
+var api_key = ${{secrets.api_key}}
+
 (function () {
 
     var myConnector = tableau.makeConnector();
