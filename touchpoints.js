@@ -1,4 +1,4 @@
-var api_key = ${{secrets.api_key}}
+var api_key = ${{secrets.TOUCHPOINTS_API_KEY}}
 
 (function () {
 
