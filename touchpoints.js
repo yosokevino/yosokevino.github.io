@@ -1,4 +1,6 @@
-var api_key = ${{secrets.TOUCHPOINTS_API_KEY}}
+var api_key = ${{secrets.TOUCHPOINTS_API_KEY}};
+
+console.log(api_key);
 
 (function () {
 
