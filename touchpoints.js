@@ -33,27 +33,27 @@
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "answer_01",
-            alias: "answer_01",
+            alias: "experience_satisfaction",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "answer_02",
-            alias: "answer_02",
+            alias: "interaction_freq",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "answer_03",
-            alias: "answer_03",
+            alias: "interaction_ease",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "answer_04",
-            alias: "answer_04",
+            alias: "diagnostic_satisfaction",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "answer_05",
-            alias: "answer_05",
+            alias: "issue_resolved",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "answer_06",
-            alias: "answer_05",
+            alias: "future_experience_improvement",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "ip_address",
