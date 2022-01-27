@@ -5,10 +5,31 @@
     myConnector.getSchema = function (schemaCallback) {
         var cols = [{
             id: "id",
+            alias: "id",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "type",
             alias: "type",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "created_at",
+            alias: "created_at",
+            dataType: tableau.dataTypeEnum.datetime
+        }, {
+            id: "updated_at",
+            alias: "updated_at",
+            dataType: tableau.dataTypeEnum.datetime
+        }, {
+            id: "referer",
+            alias: "referer",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "page",
+            alias: "page",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "user_agent",
+            alias: "user_agent",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "answer_01",
@@ -17,6 +38,50 @@
         }, {
             id: "answer_02",
             alias: "answer_02",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "answer_03",
+            alias: "answer_03",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "answer_04",
+            alias: "answer_04",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "answer_05",
+            alias: "answer_05",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "answer_06",
+            alias: "answer_05",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "ip_address",
+            alias: "ip_address",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "location_code",
+            alias: "location_code",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "flagged",
+            alias: "flagged",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "archived",
+            alias: "archived",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "aasm_state",
+            alias: "aasm_state",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "language",
+            alias: "language",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "uuid",
+            alias: "uuid",
             dataType: tableau.dataTypeEnum.string
         }];
 
@@ -30,8 +95,8 @@
     };
 
     myConnector.getData = function (table, doneCallback) {
-        $.getJSON("https://api.gsa.gov/analytics/touchpoints/v1/forms/454ebacc.json?API_KEY=5SwQLcU169ZfG3bDZpnvb0gDP1Den6jApdQp23xO", function (data) {
-            var feat = data.included,
+        $.getJSON("https://touchpoints-dev-api.azure-api.us/", function (data) {
+            var feat = data,
                 tableData = [];
 
             // Iterate over the JSON object
@@ -39,8 +104,24 @@
                 tableData.push({
                     "id": feat[i].id,
                     "type": feat[i].type,
+                    "created_at": feat[i].attributes.created_at,
+                    "updated_at": feat[i].attributes.updated_at,
+                    "referer": feat[i].attributes.referer,
+                    "page": feat[i].attributes.page,
+                    "user_agent": feat[i].attributes.user_agent,
                     "answer_01": feat[i].attributes.answer_01,
-                    "answer_02": feat[i].attributes.answer_02
+                    "answer_02": feat[i].attributes.answer_02,
+                    "answer_03": feat[i].attributes.answer_03,
+                    "answer_04": feat[i].attributes.answer_04,
+                    "answer_05": feat[i].attributes.answer_05,
+                    "answer_06": feat[i].attributes.answer_06,
+                    "ip_address": feat[i].attributes.ip_address,
+                    "location_code": feat[i].attributes.location_code,
+                    "flagged": feat[i].attributes.flagged,
+                    "archived": feat[i].attributes.archived,
+                    "aasm_state": feat[i].attributes.aasm_state,
+                    "language": feat[i].attributes.language,
+                    "uuid": feat[i].attributes.uuid
                 });
             }
 
